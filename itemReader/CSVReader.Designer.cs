@@ -29,13 +29,9 @@ namespace itemReader
         /// </summary>
         private void InitializeComponent()
         {
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialog4 = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialog5 = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialog6 = new System.Windows.Forms.OpenFileDialog();
+
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.selectFileButton = new System.Windows.Forms.Button();
             this.fileNameBox = new System.Windows.Forms.TextBox();
@@ -44,35 +40,13 @@ namespace itemReader
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
+
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // openFileDialog2
-            // 
-            this.openFileDialog2.FileName = "openFileDialog2";
-            // 
-            // openFileDialog3
-            // 
-            this.openFileDialog3.FileName = "openFileDialog3";
-            // 
-            // openFileDialog4
-            // 
-            this.openFileDialog4.FileName = "openFileDialog4";
-            // 
-            // openFileDialog5
-            // 
-            this.openFileDialog5.FileName = "openFileDialog5";
-            // 
-            // openFileDialog6
-            // 
-            this.openFileDialog6.FileName = "openFileDialog6";
-            // 
+ 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -135,13 +109,8 @@ namespace itemReader
 
         #endregion
 
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+
         private System.IO.FileSystemWatcher fileSystemWatcher1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog2;
-        private System.Windows.Forms.OpenFileDialog openFileDialog3;
-        private System.Windows.Forms.OpenFileDialog openFileDialog4;
-        private System.Windows.Forms.OpenFileDialog openFileDialog5;
-        private System.Windows.Forms.OpenFileDialog openFileDialog6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox outputWindow;
         private System.Windows.Forms.Button selectFileButton;
