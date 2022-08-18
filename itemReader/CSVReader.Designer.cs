@@ -77,7 +77,6 @@ namespace itemReader
             this.fileNameBox.Name = "fileNameBox";
             this.fileNameBox.Size = new System.Drawing.Size(446, 20);
             this.fileNameBox.TabIndex = 1;
-            this.fileNameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // outputWindow
             // 
@@ -98,7 +97,6 @@ namespace itemReader
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CSVReader";
             this.Text = " ";
-            this.Load += new System.EventHandler(this.CSVReader_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
