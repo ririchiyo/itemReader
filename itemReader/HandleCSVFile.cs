@@ -33,7 +33,14 @@ namespace itemReader
                     var _csvlist = csv.GetRecords<Number>();
                     foreach (Number item in _csvlist)
                     {
-                        temp += BigInteger.Parse(item.number);
+                        if(BigInteger.TryParse(item.ToString(), out var _temp))
+                        {
+                            temp += _temp;
+                        }
+                        else
+                        {
+                            outputWindow.Text = "Unexpected Data";
+                        }
                     }
 
                     FileReader fr = new FileReader();
