@@ -1,10 +1,7 @@
 ﻿using System;
 using System.IO;
-using ClosedXML.Excel;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
+
 
 namespace itemReader
 {

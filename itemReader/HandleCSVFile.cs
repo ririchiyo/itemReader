@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CsvHelper;
+﻿using CsvHelper;
 using CsvHelper.Configuration;
 using System.Numerics;
 using System.IO;
@@ -33,7 +28,7 @@ namespace itemReader
                     var _csvlist = csv.GetRecords<Number>();
                     foreach (Number item in _csvlist)
                     {
-                        if(BigInteger.TryParse(item.ToString(), out var _temp))
+                        if(BigInteger.TryParse(item.number.ToString(), out var _temp))
                         {
                             temp += _temp;
                         }
