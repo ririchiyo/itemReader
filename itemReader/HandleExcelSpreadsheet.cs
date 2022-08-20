@@ -20,15 +20,20 @@ namespace itemReader
                 var workbook = new XLWorkbook(fileName.ToString());
                 foreach (IXLWorksheet worksheet in workbook.Worksheets)
                 {
-                    List<string> addedNumber = new List<String>();
+                    BigInteger temp = BigInteger.Zero;
                     foreach (IXLRow row in worksheet.Rows())
                     {
                         string number = string.Empty;
                         foreach (IXLCell cell in row.Cells())
                         {
-                            if (BigInteger.TryParse(cell.Value.ToString(), out BigInteger _temp))
+                            number += cell.Value.ToString();
+                        }
+
+                        if (number.Length > 0)
+                        {
+                            if (BigInteger.TryParse(number, out BigInteger _temp))
                             {
-                                number += _temp;
+                                temp += _temp;
                             }
                             else
                             {
@@ -36,11 +41,9 @@ namespace itemReader
                                 return;
                             }
                         }
-                        addedNumber.Add(number);
                     }
-
                     FileReader fr = new FileReader();
-                    outputWindow.Text = fr.HandleFormatting(fr.HandleCalculation(addedNumber));
+                    outputWindow.Text = fr.HandleFormatting(temp);
                     fr.Dispose();
                 }
             }
