@@ -13,9 +13,10 @@ namespace itemReader
             try
             {
                 var workbook = new XLWorkbook(fileName.ToString());
+                FileReader fr = new FileReader();
+                BigInteger temp = BigInteger.Zero;
                 foreach (IXLWorksheet worksheet in workbook.Worksheets)
                 {
-                    BigInteger temp = BigInteger.Zero;
                     foreach (IXLRow row in worksheet.Rows())
                     {
                         string number = string.Empty;
@@ -23,24 +24,14 @@ namespace itemReader
                         {
                             number += cell.Value.ToString();
                         }
-
                         if (number.Length > 0)
                         {
-                            if (BigInteger.TryParse(number, out BigInteger _temp))
-                            {
-                                temp += _temp;
-                            }
-                            else
-                            {
-                                outputWindow.Text = "Invalid Data Specified";
-                                return;
-                            }
+                            temp += fr.handleSimpleAdd(number);
                         }
                     }
-                    FileReader fr = new FileReader();
-                    outputWindow.Text = fr.HandleFormatting(temp);
-                    fr.Dispose();
                 }
+                outputWindow.Text = fr.HandleFormatting(temp);
+                fr.Dispose();
             }
             catch (FileFormatException e)
             {

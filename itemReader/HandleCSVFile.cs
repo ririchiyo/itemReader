@@ -26,19 +26,12 @@ namespace itemReader
 
                     BigInteger temp = BigInteger.Zero;
                     var _csvlist = csv.GetRecords<Number>();
+                    FileReader fr = new FileReader();
                     foreach (Number item in _csvlist)
                     {
-                        if(BigInteger.TryParse(item.number.ToString(), out var _temp))
-                        {
-                            temp += _temp;
-                        }
-                        else
-                        {
-                            outputWindow.Text = "Unexpected Data";
-                        }
+                        temp += fr.handleSimpleAdd(item.number);
                     }
 
-                    FileReader fr = new FileReader();
                     outputWindow.Text = fr.HandleFormatting(temp);
                     fr.Dispose();
                 }

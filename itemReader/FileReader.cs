@@ -22,6 +22,20 @@ namespace itemReader
             return charList;
         }
 
+        public BigInteger handleSimpleAdd(string rawNumber)
+        {
+            BigInteger temp = BigInteger.Zero;
+            if (BigInteger.TryParse(rawNumber, out var _temp))
+            {
+                temp += _temp;
+            }
+            else
+            {
+                return BigInteger.MinusOne;
+            }
+            return temp;
+        }
+
         public BigInteger HandleCalculation(List<string> Numbers)
         {
             BigInteger temp = BigInteger.Zero;
