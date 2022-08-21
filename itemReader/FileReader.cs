@@ -7,19 +7,23 @@ using System.Threading.Tasks;
 
 namespace itemReader
 {
-    class FileReader : IDisposable
+
+    interface IFileReader
+    {
+        IEnumerable<Char> ReadData(string inputData);
+        BigInteger handleSimpleAdd(string rawNumber);
+        BigInteger HandleCalculation(List<String> Numbers);
+        string HandleFormatting(BigInteger rawNumber);
+
+    }
+
+
+    class FileReader : IFileReader
     {
         public IEnumerable<Char> ReadData(string inputData)
         {
             var inputList = inputData.ToArray();
-
-            List<Char> charList = new List<Char>();
-
-            foreach(var item in inputList)
-            {
-                charList.Add(item);
-            }  
-            return charList;
+            return inputList.ToArray();
         }
 
         public BigInteger handleSimpleAdd(string rawNumber)
